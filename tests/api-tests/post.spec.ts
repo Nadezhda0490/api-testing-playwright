@@ -14,10 +14,9 @@ test("should create a new post", async () => {
   const response = await context.post("/posts", {
     data: requestBody,
   });
+  expect(response.status()).toBe(201);
 
   const body = await response.json();
-
-  expect(response.status()).toBe(201);
   expect(body).toHaveProperty("userId", 12);
   expect(body).toHaveProperty("title", "new post creation");
   expect(body).toHaveProperty("body", "Example of a new post added via a test request");

@@ -22,7 +22,6 @@ test("Mock GET /users and verify response", async ({ page }) => {
     return response.json();
   });
 
-  console.log(users);
   expect(users).toEqual([
     { id: 1, name: "Mocked User 1" },
     { id: 2, name: "Mocked User 2" },

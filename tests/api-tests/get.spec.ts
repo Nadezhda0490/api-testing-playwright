@@ -10,7 +10,6 @@ test.describe("Get posts", () => {
     expect(response.status()).toBe(200);
 
     const body = await response.json();
-
     expect(Array.isArray(body)).toBeTruthy();
     expect(body.length).toBeGreaterThan(0);
 
